@@ -16,12 +16,24 @@ for test in range(1, T+1):
 
     print(lista_coppie)
 
-    x = 0
 
-    # INSERISCI IL TUO CODICE QUI
+x = 0
+#codice qui
 
+#ordino per secondo elemento
+lista_coppie.sort(key=lambda x:x[1])
 
-    print("Case #%d: " % test, end='')
-    print(x)
+fine = lista_coppie[0][1]
+caramelle = 1
+
+for inizio, finale in lista_coppie[1:]:
+    if fine < inizio:
+        caramelle += 1
+        fine = finale
+
+print(lista_coppie)
+
+print("Case #%d: " % test, end='')
+print(caramelle)
 
 sys.stdout.close()
